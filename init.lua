@@ -7,7 +7,7 @@ require("config.lazy")
 ------------------
 if vim.g.neovide then
   vim.opt.guifont = { "FiraCode Nerd Font", ":h13" } -- 字体和大小
-  vim.g.neovide_transparency = 0.8              -- 背景透明度
+  vim.g.neovide_transparency = 0.9              -- 背景透明度
   vim.g.neovide_cursor_vfx_mode = "railgun"         -- 光标特效
 end
 
@@ -21,6 +21,9 @@ vim.cmd("syntax on")  -- 启用语法高亮
 vim.api.nvim_set_hl(0, "Conceal", { fg = "#85D3F2" }) -- 代码高亮
 
 vim.g.neovide_window_blurred = true  -- 毛玻璃效果
+
+vim.api.nvim_set_hl(0, "Visual", { bg = "#FF6077", fg = "#FFFFFF" }) -- vision模式
+
 
 ------------------
 
