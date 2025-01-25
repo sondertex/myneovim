@@ -6,26 +6,18 @@ require("config.lazy")
 
 ------------------
 if vim.g.neovide then
-  vim.opt.guifont = { "FiraCode Nerd Font", ":h13" } -- 字体和大小
-  vim.g.neovide_transparency = 0.85              -- 背景透明度
+  vim.opt.guifont = { "0xProto Nerd Font", ":h13" } -- 字体和大小
+  vim.g.neovide_transparency = 1              -- 背景透明度
   vim.g.neovide_cursor_vfx_mode = "railgun"         -- 光标特效
 end
 
-vim.opt.swapfile = false 
-vim.opt.writebackup = false 
 
-
-vim.cmd("set wrap")  -- 按行宽换行
+vim.o.wrap = true        -- 启用换行
+vim.o.linebreak = true   -- 避免单词中间断行
+vim.o.showbreak = "↪ "   -- 显示换行提示符
 vim.cmd("syntax on")  -- 启用语法高亮
-
 vim.api.nvim_set_hl(0, "Conceal", { fg = "#85D3F2" }) -- 代码高亮
-
-vim.g.neovide_window_blurred = true  -- 毛玻璃效果
-
-vim.api.nvim_set_hl(0, "Visual", { bg = "#FF6077", fg = "#FFFFFF" }) -- vision模式
-
-
-
+vim.api.nvim_set_hl(0, "Visual", { bg = "#FF6077", fg = "#FFFFFF" }) -- vision模式选中颜色
 
 
 ------------------
@@ -34,6 +26,7 @@ vim.api.nvim_set_hl(0, "Visual", { bg = "#FF6077", fg = "#FFFFFF" }) -- vision�
 
 ------------------
 -- 保存并恢复光标位置
+
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
     -- 使用 vim.defer_fn 确保文件完全加载后恢复光标
@@ -50,12 +43,22 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 
 
-
 ------------------
 
 -- lualine
 
 ------------------
+
+require('lualine').setup {
+  sections = {
+    lualine_a = { 'mode' }, -- A 显示模式
+    lualine_b = { 'filename' }, -- B 显示文件名
+    lualine_c = { '' }, -- C 为空白
+  },
+}
+
+
+
 
 
 

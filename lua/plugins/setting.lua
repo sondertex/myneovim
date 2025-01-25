@@ -30,6 +30,8 @@ return {
     {"mini.ai", enabled = false},
     {"flash.nvim", enabled = false}, 
     {"catppuccin", enabled = false}, 
+    {"gitsigns.nvim", enabled = false},
+    {"noice.nvim", enabled = false},
     {
         "Pocco81/auto-save.nvim",
   config = function()
@@ -50,11 +52,9 @@ return {
       'sainnhe/sonokai',
       config = function()
         vim.g.sonokai_enable_italic = true
+        vim.g.sonokai_style = 'default'
         vim.cmd.colorscheme('sonokai')
-        vim.g.sonokai_style = 'andromeda'
-        vim.g.sonokai_better_performance = 1
-
-      end
+      end,
     },
     {
     'smoka7/hop.nvim',
@@ -63,7 +63,7 @@ return {
       require'hop'.setup({
         keys = 'etovxqpdygfblzhckisuran',  -- 自定义的跳转键位
       })
-    end
-  }
+    end,
+  },
 
 }
