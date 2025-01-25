@@ -41,7 +41,6 @@ return {
       events = {"InsertLeave", "TextChanged"}, -- 在离开插入模式和文本更改时保存
       conditions = {
         exists = true,
-        filetype_is_not = {}, -- 不保存特定文件类型
         modifiable = true,
       },
     })
@@ -50,18 +49,15 @@ return {
     {
       'sainnhe/sonokai',
       config = function()
-        -- Optionally configure and load the colorscheme
-        -- directly inside the plugin declaration.
         vim.g.sonokai_enable_italic = true
         vim.cmd.colorscheme('sonokai')
-        vim.g.sonokai_style = 'default'
+        vim.g.sonokai_style = 'andromeda'
         vim.g.sonokai_better_performance = 1
 
       end
     },
     {
     'smoka7/hop.nvim',
-    branch = 'v2',  -- 确保使用 v2 分支
     config = function()
       -- 初始化 Hop.nvim
       require'hop'.setup({
@@ -69,6 +65,5 @@ return {
       })
     end
   }
-
 
 }
