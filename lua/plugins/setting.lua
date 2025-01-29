@@ -1,5 +1,4 @@
 return {
-  -- 安装 UltiSnips 插件
   { 
     'SirVer/ultisnips',
     config = function()
@@ -24,14 +23,6 @@ return {
       }
     end,   
   },
-    {"blink.cmp", enabled = false}, 
-    {"nvim-treesitter", enabled = false},
-    {"nvim-treesitter-textobjects", enabled = false}, 
-    {"mini.ai", enabled = false},
-    {"flash.nvim", enabled = false}, 
-    {"catppuccin", enabled = false}, 
-    {"gitsigns.nvim", enabled = false},
-    {"noice.nvim", enabled = false},
     {
         "Pocco81/auto-save.nvim",
   config = function()
@@ -40,7 +31,7 @@ return {
       execution_message = {
         message = function() return "" end, -- 不显示保存提示
       },
-      events = {"InsertLeave", "TextChanged"}, -- 在离开插入模式和文本更改时保存
+      events = {"InsertLeave"}, -- 在离开插入模式和文本更改时保存
       conditions = {
         exists = true,
         modifiable = true,
@@ -48,14 +39,7 @@ return {
     })
   end,
   },
-    {
-      'sainnhe/sonokai',
-      config = function()
-        vim.g.sonokai_enable_italic = true
-        vim.g.sonokai_style = 'default'
-        vim.cmd.colorscheme('sonokai')
-      end,
-    },
+
     {
     'smoka7/hop.nvim',
     config = function()
@@ -65,5 +49,21 @@ return {
       })
     end,
   },
+    {"blink.cmp", enabled = false}, 
+    {"nvim-treesitter", enabled = false},
+    {"nvim-treesitter-textobjects", enabled = false}, 
+    {"mini.ai", enabled = false},
+    {"flash.nvim", enabled = false}, 
+    {"gitsigns.nvim", enabled = false},
+    {"noice.nvim", enabled = false},
+    {"catppuccin", enabled = false},
+    {"mason.nvim", enabled = false},
+    {"nvim-lspconfig", enabled = false},
+    {"nvim-lint", enabled = false},
+    {"nvim-ts-autotag", enabled = false},
+    {"plenary.nvim", enabled = false},
+    {"todo-comments.nvim", enabled = false},
+    {"nvim-ts-autotag", enabled = false},
+    {"ts-comments.nvim", enabled = false},
 
 }
