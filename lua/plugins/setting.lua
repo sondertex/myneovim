@@ -23,8 +23,8 @@ return {
       }
     end,   
   },
-    {
-        "Pocco81/auto-save.nvim",
+     {
+      "Pocco81/auto-save.nvim",
   config = function()
     require("auto-save").setup({
       enabled = true, -- 自动保存功能是否启用
@@ -38,7 +38,7 @@ return {
       },
     })
   end,
-  },
+    },
 
     {
     'smoka7/hop.nvim',
@@ -48,22 +48,22 @@ return {
         keys = 'etovxqpdygfblzhckisuran',  -- 自定义的跳转键位
       })
     end,
-  },
+    },
     {"blink.cmp", enabled = false}, 
     {"nvim-treesitter", enabled = false},
     {"nvim-treesitter-textobjects", enabled = false}, 
     {"mini.ai", enabled = false},
     {"flash.nvim", enabled = false}, 
     {"gitsigns.nvim", enabled = false},
-    {"noice.nvim", enabled = false},
-    {"catppuccin", enabled = false},
+
     {"mason.nvim", enabled = false},
     {"nvim-lspconfig", enabled = false},
     {"nvim-lint", enabled = false},
     {"nvim-ts-autotag", enabled = false},
-    {"plenary.nvim", enabled = false},
     {"todo-comments.nvim", enabled = false},
     {"nvim-ts-autotag", enabled = false},
     {"ts-comments.nvim", enabled = false},
+    {"neo-tree.nvim", enabled = false},
+    {"persistent.nvim", enabled = false},
 
 }
