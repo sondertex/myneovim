@@ -13,32 +13,32 @@ endglobal
 
 context "math()"
 snippet "(\\?[a-zA-Z]\w*)hat" "hat" riA
-\hat{`!p snip.rv=match.group(1)`} 
+\hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"
 snippet "(\\?[a-zA-Z]\w*)sl" "sl" riA
-\mathbf{`!p snip.rv=match.group(1)`} 
+\mathbf{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"
 snippet "(\\?[A-Z]\w*)ht" "ht" riA
-\mathcal{`!p snip.rv=match.group(1)`} 
+\mathcal{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"
 snippet "(\\?[A-Z]\w*)(kx)" "kx" riA
-\mathbb{`!p snip.rv=match.group(1)`} 
+\mathbb{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"
 snippet "(\\?[A-Z]\w*)lb" "lb" riA
-\mathscr{`!p snip.rv=match.group(1)`} 
+\mathscr{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"
 snippet "((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/" "lb" riA
-\frac{`!p snip.rv=match.group(1)`}{$1} $0
+\frac{`!p snip.rv=match.group(1)`}{$1}$0
 endsnippet
 
 context "math()"
@@ -64,13 +64,7 @@ endsnippet
 priority 2
 context "math()"
 snippet "([0-9])c" "lb" riA
-^{`!p snip.rv=match.group(1)`} 
-endsnippet
-
-
-context "math()"
-snippet "sb" "lb" riA
-^{$1} $0
+^{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 2
@@ -91,12 +85,28 @@ endsnippet
 
 context "math()"
 snippet "fs" "fs" riA
-\frac{$1}{$2} $0
+\frac{$1}{$2}$0
 endsnippet
 
 context "math()"
 snippet "nj" "fs" riA
 \langle $1,$2 \rangle $0
+endsnippet
+
+context "math()"
+snippet "sb" "lb" riA
+^{$1}$0
+endsnippet
+
+context "math()"
+snippet "xh" "lb" riA
+\\\\
+&$0
+endsnippet
+
+context "math()"
+snippet "yy" "lb" rA
+&$0
 endsnippet
 
 context "math()"
@@ -111,12 +121,12 @@ endsnippet
 
 context "math()"
 snippet "re" "re" riA
-\Re($0) 
+\Re($1)$0 
 endsnippet
 
 context "math()"
 snippet "im" "im" riA
-\Im($0) 
+\Im($1)$0 
 endsnippet
 
 context "math()"
@@ -146,17 +156,17 @@ endsnippet
 
 context "math()"
 snippet "ly" "ly" riA
-\mathring{U}($1, $2) $0
+\mathring{U}($1, $2)$0
 endsnippet
 
 context "math()"
 snippet "inf" "inf" riA
-\inf \limits_{$1} $0
+\inf \limits_{$1}$0
 endsnippet
 
 context "math()"
 snippet "sup" "sup" riA
-\sup \limits_{$1} $0
+\sup \limits_{$1}$0
 endsnippet
 
 context "math()"
@@ -191,32 +201,32 @@ endsnippet
 
 context "math()"
 snippet "qh" "qh" riA
-\sum\\limits_{$1}^{$2} $0
+\sum\\limits_{$1}^{$2}$0
 endsnippet
 
 context "math()"
 snippet "lj" "lj" riA
-\prod\\limits_{$1}^{$2} $0
+\prod\\limits_{$1}^{$2}$0
 endsnippet
 
 context "math()"
 snippet "jx" "jx" riA
-\lim \limits_{$1 \to $2} $0 
+\lim \limits_{$1 \to $2}$0 
 endsnippet
 
 context "math()"
 snippet "sj" "sj" riA
-\varlimsup \limits_{$1 \to $2} $0 
+\varlimsup \limits_{$1 \to $2}$0 
 endsnippet
 
 context "math()"
 snippet "xj" "xj" riA
-\varliminf \limits_{$1 \to $2} $0
+\varliminf \limits_{$1 \to $2}$0
 endsnippet
 
 context "math()"
 snippet "jf" "jf" riA
-\int_{$1}^{$2} $3  \\;\text{d} $0
+\int_{$1}^{$2} $3  \\;\text{d}$0
 endsnippet
 
 priority 1
@@ -298,22 +308,22 @@ endsnippet
 
 context "math()"
 snippet "jd" "jd" riA
-\left|$1 \right| $0 
+\left|$1\right|$0 
 endsnippet
 
 context "math()"
 snippet "gh" "gh" riA
-\sqrt{$1} $0
+\sqrt{$1}$0
 endsnippet
 
 context "math()"
 snippet "gg" "gg" riA
-\sqrt[$1]{$2} $0
+\sqrt[$1]{$2}$0
 endsnippet
 
 context "math()"
 snippet "hk" "hk" riA
-\\{$1\\} $0 
+\\{$1\\}$0 
 endsnippet
 
 context "math()"
@@ -323,7 +333,7 @@ endsnippet
 
 context "math()"
 snippet "kh" "kh" riA
-\left( $1 \right) $0
+\left( $1 \right)$0
 endsnippet
 
 context "math()"
@@ -358,12 +368,12 @@ endsnippet
 
 context "math()"
 snippet "max" "max" riA
-\max \limits_{$1} $0 
+\max \limits_{$1}$0 
 endsnippet
 
 context "math()"
 snippet "min" "min" riA
-\max \limits_{$1} $0 
+\max \limits_{$1}$0 
 endsnippet
 
 context "math()"
@@ -472,7 +482,7 @@ snippet "bing" "bing" riA
 endsnippet
 
 context "math()"
-snippet "xq" "fh" riA
+snippet "oo" "fh" riA
 \circ 
 endsnippet
 
@@ -484,6 +494,11 @@ endsnippet
 context "math()"
 snippet "dt" "dt" riA
 \delta 
+endsnippet
+
+context "math()"
+snippet "Dt" "dt" riA
+\Delta 
 endsnippet
 
 context "math()"
@@ -577,11 +592,11 @@ endsnippet
 # ----------------------------- #
 
 snippet ss "ss" wA
-\$ $1 \$ $0
+$$0$ 
 endsnippet
 
 snippet SS "SS" wA
-\$$ $1 \$$ $0
+$$$0$$ 
 endsnippet
 
 snippet sc "sc" 
