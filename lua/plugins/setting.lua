@@ -14,10 +14,10 @@ return {
       vim.g.vimtex_quickfix_mode = 0
       vim.g.vimtex_view_method = 'skim'
       vim.g.vimtex_view_skim_sync = 1
-      vim.o.conceallevel = 1
+      vim.o.conceallevel = 0
       vim.g.tex_conceal = 'abdmg'
-      vim.g.vimtex_compiler_latexmk_engines = {['_'] = '-pdflatex'}
-      vim.g.vimtex_compiler_latexrun_engines = {['_'] = 'pdflatex'}
+      vim.g.vimtex_compiler_latexmk_engines = {['_'] = '-xelatex'}
+      vim.g.vimtex_compiler_latexrun_engines = {['_'] = 'xelatex'}
       vim.g.vimtex_compiler_latexmk = {
       continuous = 0, -- 禁用连续编译模式
       }
@@ -39,7 +39,6 @@ return {
     })
   end,
     },
-
     {
     'smoka7/hop.nvim',
     config = function()

@@ -6,17 +6,30 @@ require("config.lazy")
 
 ------------------
 if vim.g.neovide then
-  vim.opt.guifont = { "0xProto Nerd Font", ":h12" } -- 字体设置
-  vim.g.neovide_cursor_vfx_duration = 0.05  -- 设置更短的持续时间来加快动画
-  vim.g.neovide_fully_buffered = true  -- 开启完全缓冲
-  vim.g.neovide_sync = true -- 输入同步
+  vim.g.neovide_refresh_rate = 120
+  vim.opt.guifont = "JetBrainsMono Nerd Font:h13"
 end
 
+vim.g.neovide_opacity = 0.9  -- 设置透明度
+vim.g.neovide_floating_blur = true
+vim.opt.wrap = true
+vim.opt.cursorline = false
+vim.g.vimtex_fold_enabled = 0
+vim.g.vimtex_quickfix_enabled = 1
+vim.g.vimtex_indent_enabled = 0
+vim.g.vimtex_matchparen_enabled = 0
+vim.opt.autoindent = false
+vim.opt.smartindent = false
+vim.opt.cindent = false
 
-vim.o.wrap = true        -- 启用换行
-vim.o.linebreak = true   -- 避免单词中间断行
-vim.cmd("syntax on")  -- 启用语法高亮
-vim.cmd [[highlight Conceal guifg=#a6e3a1]]   -- 数学环境的显示公式颜色
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "tex",
+    callback = function()
+        vim.opt_local.indentexpr = ""
+    end,
+})
+
+
 ------------------
 
 -- lualine
@@ -30,11 +43,26 @@ require('lualine').setup({
   }
 })
 
+------------------
+
+-- autosync
+
+------------------
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "plugins/*.lua",
+  callback = function()
+    vim.cmd("Lazy sync")
+    vim.notify("Lazy sync executed", vim.log.levels.INFO)
+  end,
+})
 
 
-
-
-
+vim.cmd([[
+  augroup ReloadConfig
+    autocmd!
+    autocmd BufWritePost init.lua source $MYVIMRC
+  augroup END
+]])
 
 
 
