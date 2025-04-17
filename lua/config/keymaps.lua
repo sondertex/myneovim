@@ -31,7 +31,7 @@ end, { desc = "Go to line end of the next line" })
 -- leader r: 跳转回跳转前的位置
 vim.keymap.set('n', '<leader>r', '<C-o>', { desc = 'Jump back (like Ctrl+o)' })
 
-
+-- leader c: 快速复制粘贴
 vim.keymap.set("n", "<leader>c", function()
   local original_pos = vim.fn.getpos(".")
 
@@ -51,6 +51,16 @@ vim.keymap.set("n", "<leader>c", function()
 
   vim.cmd("normal! p")
 end, { desc = "Hop and copy math env without newline" })
+
+-- leader f: 运行当前python
+
+vim.keymap.set("n", "<leader>f", function()
+  local file = vim.fn.expand("%")
+  vim.cmd("TermExec cmd='python3 " .. file .. "'")
+end, { desc = "Run Python file in terminal" })
+
+
+
 
 
 

@@ -57,12 +57,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 
-vim.cmd([[
-  augroup ReloadConfig
-    autocmd!
-    autocmd BufWritePost init.lua source $MYVIMRC
-  augroup END
-]])
+
+
+
 
 
 

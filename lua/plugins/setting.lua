@@ -48,6 +48,11 @@ return {
       })
     end,
     },
+    {
+   "akinsho/toggleterm.nvim",
+   version = "*",
+   config = true
+    },
     {"blink.cmp", enabled = false}, 
     {"nvim-treesitter", enabled = false},
     {"nvim-treesitter-textobjects", enabled = false}, 
