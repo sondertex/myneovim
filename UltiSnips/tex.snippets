@@ -120,7 +120,7 @@ endsnippet
 context "math()"
 snippet "xh" "lb" riA
 \\\\
-&$0
+& $0
 endsnippet
 
 context "math()"
@@ -170,7 +170,7 @@ endsnippet
 
 context "math()"
 snippet "ly" "ly" riA
-\mathring{U}($1, $2)$0
+\mathring{B}($1, $2)$0
 endsnippet
 
 context "math()"
@@ -531,7 +531,7 @@ snippet "om" "om" riA
 endsnippet
 
 context "math()"
-snippet "Om" "Om" riA
+snippet "OM" "Om" riA
 \Omega 
 endsnippet
 
@@ -541,7 +541,7 @@ snippet "pi" "pi" riA
 endsnippet
 
 context "math()"
-snippet "Pi" "Pi" riA
+snippet "PI" "Pi" riA
 \Pi 
 endsnippet
 
@@ -561,12 +561,17 @@ snippet "ld" "ld" riA
 endsnippet
 
 context "math()"
+snippet "zt" "ld" riA
+\zeta  
+endsnippet
+
+context "math()"
 snippet "sm" "sm" riA
 \sigma 
 endsnippet
 
 context "math()"
-snippet "Sm" "Sm" riA
+snippet "SM" "Sm" riA
 \Sigma 
 endsnippet
 
@@ -591,7 +596,7 @@ snippet "gm" "gm" riA
 endsnippet
 
 context "math()"
-snippet "Gm" "Gm" riA
+snippet "GM" "Gm" riA
 \Gamma 
 endsnippet
 
@@ -600,23 +605,16 @@ snippet "st" "st" riA
 \theta 
 endsnippet
 
-context "math()"
-snippet "xh" "st" riA
-\\
-\&$0
-endsnippet
-
-
 # ----------------------------- #
 # 非数学环境
 # ----------------------------- #
 
 snippet ss "ss" wA
-$$0$ 
+$ $1 $ $0 
 endsnippet
 
 snippet SS "SS" wA
-$$$0$$ 
+$$ $1 $$ $0
 endsnippet
 
 snippet sc "sc" 
