@@ -4,7 +4,7 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
     transparent_background = false,
     integrations = {
       cmp = true,
@@ -21,38 +21,51 @@ return {
     },
     custom_highlights = function(colors)
       return {
-        texEnvArgName = { link = "String" }, 
-        texMathEnvArgName  = { link = "String" }, 
-        texDelim = { link = "Special" },
-        texMathCmd = { link = "Operator" },
-        texMathDelim = { link = "Delimiter" },
-        texMathSub = { link = "Type" },
-        texMathSuperSub = { link = "Delimiter" },
-        texMathGroup = { link = "Type" },
-        texMathZoneTD = { link = "Type" },
-        texMathSuper = { link = "Type" },
-        texMathArg = { link = "Type" },
-        texMathZoneTI = { link = "Type" },
-        texMathZoneEnv = { link = "Type" },
-        texMathDelimZoneTI = { link = "Keywords" },
-        texMathDelimZoneTD = { link = "Keywords" },
-        texTabularChar = { link = "Function" },
-        Special = { fg = "#FFFFFF" },
-        String = { fg = "#fd9621", style = { "bold" } },
-        Statement = { fg = "#f92472"},
-        Preproc = { fg = "#f92472" },
-        Delimiter = { fg = "#FFFFFF" },
-        Nonetext = { fg = "#FFFFFF" },
-        Operator = { fg = "#67d8ef" },
-        Function = { fg = "#ac80ff" },
-        Keywords = { fg = "#e7db74" },
-        Type = { fg = "#a6e22c" },
-        Normal = { fg = "#ffffff"},  -- 修改普通文本颜色
+        texCmdMathEnv  = { fg = "#f92472" },
+        texOpt = { fg = "#ffffff"},
+        texCmdPart = { fg = "#67d8ef"},
+        texCmdEnv = { fg = "#f92472"},
+        texMathSymbol = { fg = "#f92472"},
+        texCmdGreek = { fg = "#f92472"},
+        texMathOper = { fg = "#f92472"},
+        texCmdEnvM = { fg = "#f92472"},
+        texPartArgTitle = { fg = "#ffffff"},
+        texMathEnvArgName = { fg = "#F99421"},
+        texEnvArgName = { fg = "#F99421"},
+        texMathZoneTD = { fg = "#ffffff"},
+        texMathGroup = { fg = "#ffffff"},
+        texMathZoneEnv = { fg = "#ffffff"},
+        texMathDelim  = { fg = "#ffffff"},
+        texMathStyleConcArg = { fg = "#ffffff"},
+        texMathSuperSub = { fg = "#ffffff"},
+        texMathZoneTI = { fg = "#ffffff"},
+        texMathArg = { fg = "#ffffff"},
+        texDelim = { fg = "#ffffff"},
+        Normal = { fg = "#ffffff"},
+        texTabularChar = { fg = "#ac80ff"},
+        texSpecialChar = { fg = "#ac80ff"},
+        texMathSuper = { fg = "#ac80ff"},
+        texMathSub = { fg = "#ac80ff"},
+        texCmdStyleItal = { fg = "#67d8ef"},
+        texMathCmd = { fg = "#67d8ef"},
+        texMathCmdStyle = { fg = "#67d8ef"},
+        texCmd = { fg = "#67d8ef"},
+        texMathDelimZoneTD = { fg = "#e7db74"},
+        texMathDelimZoneTI = { fg = "#e7db74"},
       }
     end,
   },
+  
   config = function(_, opts)
     require("catppuccin").setup(opts)
     vim.cmd.colorscheme("catppuccin")
   end,
 }
+
+
+
+
+
+
+
+

@@ -39,26 +39,19 @@ return {
   end,
     },
     {
-    'smoka7/hop.nvim',
-    config = function()
-      -- 初始化 Hop.nvim
-      require'hop'.setup({
-        keys = 'etovxqpdygfblzhckisuran',  -- 自定义的跳转键位
-      })
-    end,
+    "folke/flash.nvim",
+    opts = {},  -- 默认配置
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash Jump" },
     },
-    {
-   "akinsho/toggleterm.nvim",
-   version = "*",
-   config = true
     },
-    {"blink.cmp", enabled = false}, 
+    {"blink.cmp", enabled = false},
+    {"mason-lspconfig.nvim", enabled = false},
     {"nvim-treesitter", enabled = false},
     {"nvim-treesitter-textobjects", enabled = false}, 
     {"mini.ai", enabled = false},
-    {"flash.nvim", enabled = false}, 
     {"gitsigns.nvim", enabled = false},
-
+    {"gitsigns.nvim", enabled = false},
     {"mason.nvim", enabled = false},
     {"nvim-lspconfig", enabled = false},
     {"nvim-lint", enabled = false},
